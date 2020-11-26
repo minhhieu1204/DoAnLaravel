@@ -1,0 +1,108 @@
+
+Insert into chuyen_mucs(tenchuyenmuc) values('Xe'),('Chính trị'),('Tài chính');
+
+
+INSERT INTO `users`   ( `username`, `password`, `email`, `ngaysinh`, `loaiuser`)
+VALUES ('chinh123','chinh123','chinh@gmail.com','26-10-2000',false)
+, ('hieu123', 'hieu123','hieu@gmail.com','1-10-2000',false)
+, ('dien123', 'dien123','dien@gmail.com','1-10-2000',false)
+, ('phuc123', 'phuc123','phuc@gmail.com','1-10-2000',false);
+
+
+
+
+
+
+Insert into bai_viets(tieude,mota,noidung,hinhanh,thoigian,luotlike,daxoa,trangthai,chuyenmuc_id) values('Ông Biden nói về khả năng điều tra hình sự ông Trump khi vừa nhậm chức.',' Ông Biden tiết lộ đã không nói chuyện trực tiếp với ông Trump kể từ khi bầu cử. ',' Trong buổi phỏng vấn với NBC Nightly News tại thành phố Wilmington, bang Delaware, Mỹ hôm 24/11 (giờ địa phương), ông Biden đã chia sẻ về thông tin cho rằng khi nhậm chức ông sẽ điều tra hình sự ông Trump.
+"Một số thành viên đảng Dân chủ muốn thực hiện các cuộc điều tra hình sự với ông Trump sau khi mãn nhiệm. Ông có ủng hộ điều này?", Lester Holt, MC của chương trình NBC Nightly News, đặt câu hỏi với ông Biden.
+"Tôi sẽ không lặp lại những gì ông Trump đã làm và sử dụng Bộ Tư pháp Mỹ như một phương tiện để khẳng định rằng điều gì đó sắp xảy ra. 
+Có một số cuộc điều tra về vấn đề này mà tôi đọc được ở cấp độ bang. Nhưng chẳng có gì để tôi có thể hay không thể can thiệp vào vấn đề đó", ông Biden trả lời. Trong chia sẻ của mình, Tổng thống đắc cử còn tiết lộ đã không nói chuyện trực tiếp với ông Trump kể từ khi bầu cử diễn ra. 
+Một ngày sau khi Cơ quan Dịch vụ Tổng hợp (GSA) của chính phủ Mỹ công bố bức thư xác nhận quá trình chuyển giao quyền lực, ông Biden mô tả những nỗ lực của chính quyền ông Trump cho quá trình chuyển giao là "chân thành". 
+"Ngay lập tức, chúng tôi đã được quyền tiếp cận các nguồn liên quan tới an ninh quốc gia và nhiều lĩnh vực khác. Và họ cũng cho phép tôi được nhận bản tóm tắt hàng ngày của Tổng thống... vì vậy tôi nghĩ rằng chúng ta sẽ không bị tụt lại quá xa như đã nghĩ", ông Biden nói.
+"Và tôi phải nói rằng việc để tôi tiếp cận các nguồn tin mật là chân thành, không có sự miễn cưỡng và tôi cũng không mong là có sự miễn cưỡng ở đây", ông Biden nói thêm. 
+Đảng viên đảng Dân chủ cũng nhấn mạnh chính quyền của ông sẽ không phải là "chính quyền Obama nhiệm kỳ 3" vì thế giới đã thay đổi rất nhiều trong thời gian ông Trump làm tổng thống. 
+"Đây không phải là chính quyền Obama nhiệm kỳ 3 vì chúng ta phải đối mặt với một thế giới hoàn toàn khác so với thời của ông Barack Obama. Tổng thống Trump đã thay đổi cục diện, từ nước Mỹ là trên hết trở thành nước Mỹ đơn độc", ông Biden tuyên bố. 
+Tổng thống đắc cử của nước Mỹ cho biết đã nói chuyện với các nhà lãnh đạo thế giới sau cuộc bầu cử, mô tả rằng họ "chúc mừng và phấn khích" với chính quyền của ông. 
+"Nước Mỹ đã trở lại. Chúng ta lại dẫn đầu một lần nữa. Tôi đã nói chuyện với hơn 20 lãnh đạo thế giới. Tất cả đều vui mừng và thậm chí là phấn kích. Nước Mỹ sẽ khẳng định lại vai trò của mình trên thế giới và nắm vai trò xây dựng liên minh", ông Biden nói. 
+Khi được hỏi những ưu tiên của ông sau khi nhậm chức vào tháng 1/2021 là gì, ông Biden tuyên bố sẽ theo đuổi lộ trình công nhận quyền công dân cho những người nhập cư trái phép. 
+"Tôi cam kết trong 100 ngày đầu tiên sẽ gửi một dự thảo luật nhập cư lên Thượng viện Mỹ với lộ trình để công nhận quyền công dân cho hơn 11 triệu người không có giấy tờ ở Mỹ", ông Biden nói. 
+Đảng Cộng hòa đang kiểm soát Thượng viện và có thể ngăn chặn nỗ lực của ông Biden. Mọi chuyện chỉ suôn sẻ trừ khi đảng Dân chủ giành thêm 2 ghế tại bang Georgia trong cuộc tranh cử vào tháng 1/2021. 
+Ông Biden cho biết biến đổi khí hậu cũng là vấn đề nằm trong danh sách ưu tiên của ông trong 100 ngày đầu tiên sau khi nhậm chức. Tổng thống đắc cử có kế hoạch đảo ngược các lệnh hành pháp "tác động đáng kể đến việc làm cho khí hậu tồi tệ hơn". 
+Trước đó, ông Biden cho biết các nhân viên của mình đang trao đổi với tiến sĩ Anthony Fauci, người chịu trách nhiệm đối phó Covid-19, về đại dịch sau khi quá trình chuyển giao quyền lực bắt đầu. 
+Quá trình chuyển giao đang chuyển từ trạng thái chờ đợi sang trạng thái di chuyển với tốc độ chóng mặt khi các quan chức nỗ lực làm việc để bù lại khoảng thời gian đã mất. Đã 17 ngày kể từ khi ông Biden được các hãng thông tấn lớn "xướng tên" vào ngày 7/11. Chỉ còn 57 ngày nữa là tới Lễ nhậm chức. 
+Nhóm chuyển giao của ông Biden đã liên lạc với mọi bộ phận của chính phủ liên bang trong 24 giờ qua và gửi lời cảm ơn tới giám đốc GSA về việc xác nhận quá trình chuyển giao quyền lực. Không có quyết định này, đội ngũ của ông Biden không được tiếp cận với 6,3 triệu đô la Mỹ cho quá trình chuyển giao.
+','hinh1.jpg',' 25/11/2020','3',0,0,'2');
+
+Insert into bai_viets(tieude,mota,noidung,hinhanh,thoigian,luotlike,daxoa,trangthai,chuyenmuc_id) values('Xe gia đình hạng sang Toyota Sienna 2021 sắp về Việt Nam
+',' Toyota Sienna thế hệ mới đang trên đường về Việt Nam dưới dạng xe nhập khẩu không chính hãng (nhập bởi doanh nghiệp tư nhân), có giá khoảng 4,5 tỷ đồng.
+',' Mới đây, thông tin các doanh nghiệp nhập khẩu xe tư nhân đang chào bán Toyota Sienna phiên bản Limited trang bị động cơ Hybrid với giá từ 4,3 tỷ đến 4,5 tỷ đồng. Dự kiến, xe sẽ về Việt Nam sau khoảng 1 tháng nữa. Về thiết kế, Toyota Sienna 2021 thay đổi gần như hoàn toàn so với thế hệ cũ. Xe có thiết kế lai giữa minivan và SUV với phần đầu xe kéo dài và vuông vức. Hệ thống khung gầm của xe được đổi sang loại mô-đun TNGA-K. Cụm đèn trước và đèn hậu LED mảnh. Lưới tản nhiệt hình thang cỡ lớn. Tuỳ chọn cao cấp nhất là bộ mâm 20 inch. Về nội thất, tổng thể khoang cabin của Toyota Sienna 2021 trông gọn gàng và thanh thoát hơn hẳn so với đời trước nhờ cụm đồng hồ và màn hình tách rời đặt nổi kích thước 9 inch, hỗ trợ Apple CarPlay/Android Auto. Đồng hồ analog có màn hình lớn hỗ trợ đa thông tin. Xe có 7 chỗ ngồi với khoảng để chân ở tất cả các vị trí rộng hơn model cũ. Hàng ghế thứ hai với 2 chỗ tách biệt, hàng ghế cuối có 3 chỗ. Về vận hành, Toyota Sienna 2021 phiên bản nhập về Việt Nam sử dụng động cơ hybrid. Động cơ này gồm một máy xăng 2,5L và 3 mô-tơ điện, cho công suất 243 mã lực. Xe có hệ dẫn động 4 bánh toàn thời gian với tuỳ chỉnh dồn 80% về cầu sau trong những trường hợp cần thiết. Hộp số tự động vô cấp. Về an toàn, minivan hạng sang Toyota Sienna 2021 bản cao cấp nhất nổi bật với các tính năng như cảnh báo điểm mù, giữ làn đường hay ga tự động thích ứng khoảng cách,... Toyota Sienna mới không có sự thay đổi về giá so với thế hệ cũ. Những chiếc Sienna 2020 nhập tư nhân từ Mỹ về Việt Nam vẫn đang được chào bán với giá gần 4,5 tỷ đồng, mức giá này ngang ngửa với Lexus RX 350. Như vậy, Toyota Sienna hiện là mẫu xe có giá cao nhất phân khúc minivan thương hiệu phổ thông. Một vài cái tên khác có giá đắt đỏ hơn là LM350 hay LM300h thuộc thương hiệu hạng sang Lexus.','hinh2.jpg',' 24/11/2020','3',0,0,'1');
+
+
+
+Insert into bai_viets(tieude,mota,noidung,hinhanh,thoigian,luotlike,daxoa,trangthai,chuyenmuc_id) values('Tiềm lực tài chính của "ông lớn" kín tiếng nhưng cổ phiếu chiếm "đỉnh" thị trường chứng khoán',' Trên sàn chứng khoán, NTC là một trong những cổ phiếu tăng trưởng ổn định nhất trong nhiều năm qua và là cổ phiếu có thị giá lớn nhất.',' Trong bối cảnh dịch COVID-19 tác động tiêu cực đến nền kinh tế, thị trường chứng khoán Việt Nam cũng chịu ảnh hưởng không nhỏ từ đại dịch với hai làn sóng lây nhiễm.
+Thế nhưng, hoạt động cho thuê đất khu công nghiệp diễn biến tích cực, giúp CTCP Khu Công nghiệp Nam Tân Uyên (NTC) ghi nhận hoạt động kinh doanh tăng trưởng mạnh, lợi nhuận hàng trăm tỷ đồng mỗi năm, cổ phiếu tăng mạnh so với đầu năm.
+Hiện tại, trên sàn chứng khoán, NTC là một trong những cổ phiếu tăng trưởng ổn định nhất trong nhiều năm qua và là cổ phiếu có thị giá lớn nhất trên thị trường chứng khoán Việt Nam.
+Phiên giao dịch 17/11, thị giá NTC đạt 284.500 đồng/cp, tăng 76% so với đầu năm, bất chấp biến động dữ dội của thị trường bởi ảnh hưởng do dịch COVID-19. 
+Theo báo cáo tài chính quý III/2020, NTC đạt doanh thu thuần 102,8 tỷ đồng, tăng 91% so với mức 53,9 tỷ đồng của quý III/2019.
+Lợi nhuận thuần cán mốc 118 tỷ đồng, lợi nhuận sau thuế là 97,9 tỷ đồng, tăng 116% so với cùng kỳ năm trước.
+Lũy kế 9 tháng, NTC ghi nhận doanh thu thuần 195 tỷ đồng và lợi nhuận sau thuế 239,2 tỷ đồng, tăng lần lượt 39% và 36% so với cùng kỳ năm trước
+Đặc thù của lĩnh vực Khu công nghiệp là thu tiền một lần và hạch toán lợi nhuận theo từng năm. Điều này đã giúp NTC thu về lượng tiền mặt không hề nhỏ từ việc nhận trước tiền cho thuê đất.
+Việc nắm giữ lượng tiền mặt lớn (bao gồm tiền gửi có kỳ hạn) lên tới hơn 1.600 tỷ đồng đã giúp NTC mỗi năm có thêm khoản lợi nhuận lên tới trăm tỷ đồng từ lãi ngân hàng, đóng góp đáng kể vào kết quả hoạt động công ty.
+NTC hiện đang đầu tư vào 10 đơn vị, công ty liên kết trong lĩnh vực bất động sản	 khu công nghiệp, tiêu biểu như: Công ty TNHH Khu công nghiệp và đô thị Nam Tân Uyên, Công ty CP Công nghiệp Cao su Bình Long, Công ty CP Đầu tư Sài Gòn VRG,... với tổng vốn đầu tư lên tới 374,7 tỷ đồng.
+Khoản đầu tư này của NTC mang lại cổ tức rất lớn và tăng dần theo từng năm do các công ty liên doanh liên kết làm ăn thuận lợi, mở rộng liên tục quỹ đất cho thuê. 
+Với dòng tiền dồi dào, NTC là một trong những doanh nghiệp chi trả cổ tức tiền mặt hàng đầu trên sàn chứng khoán. Tỷ lệ chi trả cổ tức năm 2017 của NTC là 60% và năm 2018 là 100% bằng tiền mặt.  
+Tại cuộc họp ĐHĐCĐ thường niên diễn ra vào ngày 3/6, cổ đông NTC đã thông qua mức trả cổ tức năm 2019 là 100% bằng tiền mặt. Công ty đã tạm ứng 50% vào cuối năm 2019, 50% còn lại được thanh toán vào ngày 14/8.
+Năm 2020, công ty dự kiến tiếp tục chia cổ tức 80% bằng tiền mặt.
+Năm 2020, NTC đặt mục tiêu 390 tỷ đồng doanh thu và 177 tỷ đồng lãi sau thuế, lần lượt tăng 22% và giảm 25% so với năm 2019. 
+','hinh3.jpg',' 25/11/2020','3',0,0,'3');
+
+
+INSERT INTO `nguoi_dung_phan_hois`  ( `noidung`, `user_id`)  values (N'Ứng dụng đẹp quá bạn ơi.',1)
+
+, (N'Ứng dụng đẹp quá bạn ơi.',1)
+ 
+, (N'Ứng dụng xấu quá bạn ơi.',2)
+
+, (N'Ứng dụng đẹp hay mong bạn phát triền thêm.',3)
+, (N'Ứng dụng khá hay giúp ích mình đọc báo rất nhiều.',1);
+
+INSERT INTO `tin_nongs`( `baiviet_id`) VALUES
+ (1)
+, (2)
+, (3);
+
+
+
+INSERT INTO `videos`   ( `tieude`, `noidung`, `video`, `chuyenmuc_id`)
+values (N'Video thủ công',N'Các thủ thuật nhà bếp hiệu quả giúp bạn cải thiện hiệu saut61 tối đa công việc 1 cách hiệu quả .','video1.mp4',1)
+, (N'Video tranh cử',' Cuộc tranh cử gay gắt giữa tỗng thống obama và donantrum ở nhà trắng trong cuộc  bầu cử sáng nay','video2.mp4',3)
+, (N'Video Tài Chính','Tiền tệ  tăng giá chóng mặt trong ngày hôm nay mời các bạn xem video để nắm rõ tình hình nhé.','video3.mp4',2)
+, (N'Ô tô lao đầu vào xe tải..',' Chiếc crossover đang chạy ở làn ngoài cùng bên trái trước khi chệch sang phải và đâm sầm vào đuôi xe tải cùng chiều, hôm 1/8 trên đường E40.
+','video4.mp4',1);
+
+
+INSERT INTO `yeu_thich_bai_viets`  (`baiviet_id`, `user_id`)
+values (1,1)
+, (3,2)
+, (2,3);
+
+Insert into binh_luans(noidungbinhluan,user_id,baiviet_id) values('Rất bổ ích',1,2),('Hay lắm',2,2),('Dỡ lắm',3,2);
+
+Insert into follows(user1_id, user2_id) values(1,3),(2,3),(1,2);
+
+Insert into bao_cao_bai_viets(noidung,user_id,baiviet_id) values('Tin tức không đáng tin cậy',1,1),('Tin tức khó hiểu',2,1),('Tin tức có ngôn từ tục tỉu',3,1);
+
+
+Insert into likes(user_id,baiviet_id) values(1,3),(2,3),(3,3);
+
+
+
+
+
+
+
+
+
+
+
+
