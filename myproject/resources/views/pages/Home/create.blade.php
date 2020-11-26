@@ -3,9 +3,6 @@
 <div class="container">
     <form action="{{route('newspaper.store')}}" method="post">
         @csrf
-
-		
-		
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" class="form-control"> 
