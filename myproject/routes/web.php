@@ -33,7 +33,7 @@ Route::get('newspaper/{id}/edit',"BaivietController@edit")->name('newspaper.edit
 
  Route::get('newspaper/category/updateget/{id}',"Catagorys@update")->name('hihi.update');
  Route::put('newspaper/category/updateput/{id}',"Catagorys@edit")->name('hihi.handleupdates');
- \
+
  Route::delete('newspaper/category/delete/{id}',"Catagorys@delete")->name('hihi.delete');
 
  Route::get('lk1-n',function (){
