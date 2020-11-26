@@ -1,7 +1,7 @@
 @extends('layouts.Menu_Footer')
 @section('content')
 <div class="container">
-    <form action="{{route('newspaper.store')}}" method="post">
+    <form action="{{route('newspaper.store')}}" method="post" enctype="multipart/form-data">
         @csrf
 
 		
@@ -14,6 +14,11 @@
             <label for="description">Description</label>
             <input type="text" name="description" class="form-control">
         </div >
+
+		<div class="form-group">
+            <label for="file">Image</label>
+			<input type="file" accept="image/png, image/jpg" name="file" class="form-control">
+        </div>
 
         <div class="form-group">
             <label for="content">Content</label>

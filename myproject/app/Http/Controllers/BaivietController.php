@@ -14,8 +14,7 @@ class BaivietController extends Controller
      */
     public function index()
     {
-        $array = ["arrays"=>BaiViet::all()];
-    
+        $array = ["arrays"=>BaiViet::where('daxoa','=',0)->get()];
         return view('pages.Home.index',$array);
     }
     public function NewsHot()
@@ -48,16 +47,33 @@ class BaivietController extends Controller
      */
     public function store(Request $request)
     {
+        $file_name="";
+        $messages = [
+            'image' => 'Định dạng không cho phép',
+            'max' => 'Kích thước file quá lớn',
+        ];
+        $this->validate($request, [
+		    'file' => 'image|max:2028',
+		], $messages);
+        // Kiểm tra file hợp lệ
+        if ($request->file->isValid()){
+            // Lấy tên file
+            $file_name = $request->file->getClientOriginalName();
+            // Lưu file vào thư mục upload với tên là biến $filename
+            $request->file->move('img/upload',$file_name);
+        }
+        var_dump($file_name);
        $news=new BaiViet();
        $news->tieude = $request->title;
        $news->mota=$request->description;
        $news->noidung=$request->content;
-       $news->hinhanh="hinh4.jpg";
+       $news->hinhanh=$file_name;
        $news->thoigian=date("Y/m/d");
        $news->chuyenmuc_id = $request->category;
        $news->save();
-       $array = ["arrays"=>BaiViet::all()];
-       return view('pages.Home.index',$array);
+      
+
+       return redirect()->route('newspaper.index');
     }
 
     /**
@@ -84,7 +100,8 @@ class BaivietController extends Controller
         // $day=date('l');
         // $time=date('d/m/Y H:i:s');
         // $daytime=$day." ".$time;
-        $array = ["arrays"=>BaiViet::where('id',$id)->get()];
+        $array = ["baiviet"=>BaiViet::find($id)];
+        
          return view('pages.Home.edit',$array);
 
     }
@@ -98,15 +115,16 @@ class BaivietController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $name =  $request->name;
-        var_dump($name);
         $news=BaiViet::find($id);
-        
-        $news->name = $request->name;
+        $news->tieude = $request->title;
+        $news->mota=$request->description;
+        $news->noidung=$request->content;
+        $news->hinhanh="hinh4.jpg";
+        $news->thoigian=date("Y/m/d");
+        $news->chuyenmuc_id = $request->category;
         $news->save();
-     // $news->update(['name'=>$request->name]);
-      $array = ["arrays"=>BaiViet::all()];
-      return view('pages.Home.index',$array);
+       
+      return redirect()->route('newspaper.index');
   
     }
 
@@ -118,10 +136,10 @@ class BaivietController extends Controller
      */
     public function destroy($id)
     {
-        
         $news=BaiViet::find($id);
-        $news->delete();
-        $array = ["arrays"=>BaiViet::all()];
+        $news->daxoa=1;
+        $news->save();
+        $array = ["arrays"=>BaiViet::where('daxoa','=',0)->get()];  
         return view('pages.Home.index',$array);
     }
 }

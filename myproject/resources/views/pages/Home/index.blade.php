@@ -7,9 +7,13 @@
 <table class="table"> 
     <thead>
       <tr>
-        <th>Name Newspaper </th>
-        <th>Description</th>
+      <th>Title </th>
+        <th>Time Post</th>
+        <th>Decription</th>
         <th>Content</th>
+        <th>Image</th>
+        <th>Likes</th>
+        <th>Status</th>
         <th>Category</th>
       </tr>
     </thead>
@@ -17,9 +21,13 @@
     @foreach($arrays as $baiviet)
         <tr>
            <td> <a  href="{{route('newspaper.detail',$baiviet['id'])}}">{{$baiviet['tieude']}}</a></td>
+            <td>{{$baiviet['thoigian']}}</td>
             <td>{{$baiviet['mota']}}</td>
             <td>{{$baiviet['noidung']}}</td>
-            <td>{{$baiviet->chuyenMuc->tenchuyenmuc}}</td>
+            <td><img src="{{ asset ('img/upload/'.$baiviet['hinhanh'])  }}" alt=""></td>
+            <td>{{$baiviet['luotlike']}}</td>
+            <td>{{$baiviet['trangthai']}}</td>
+            <td>{{$baiviet->chuyenMuc->tenchuyenmuc }}</td>
             <td><a href="{{route('newspaper.create')}}"><button type="button" class="btn btn-primary btn-sm">Create</button></a></td>
             <td><a href="{{route('newspaper.edit',$baiviet['id'])}}"><button type="button" class="btn btn-primary btn-sm">Edit</button></a></td>
             <td>
