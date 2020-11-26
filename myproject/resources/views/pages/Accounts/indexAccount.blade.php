@@ -29,7 +29,7 @@
                 <form action="{{route('newspaper.destroyAccount',$account['id'])}}" method="POST">
                 @csrf
                 @method('DELETE')
-               <button  type="submit" class="btn btn-primary btn-sm" >Delete</button>
+               <button onclick="onCheck()"  type="submit" class="btn btn-primary btn-sm" >Delete</button>
                 </form> 
             </td>
         </tr> 
@@ -38,3 +38,8 @@
 
  </table>
 @endsection
+<script>
+  function onCheck(){
+    alert('Xóa thành Công');
+  }
+</script>

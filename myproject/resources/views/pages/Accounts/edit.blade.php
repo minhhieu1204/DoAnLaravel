@@ -26,25 +26,23 @@
 									<input type="email" value="{{$account['email']}}"  class="form-control" name="email" placeholder="Email Address">
 								</div>
 							</div>
-							<div class="col-md-10">
-								<div class="form-group">
-									<input type="password" value="{{$account['password']}}" class="form-control" name="password" placeholder="Password">
+							<div class="col-sm-8">
+								<div class="form-group  ">
+									<input type="password" id="password" value="{{$account['password']}}" class="form-control" name="password" placeholder="Password">
 								</div>
-              </div>
-            			  <div class="col-md-10">
+          				    </div>
+							  <div class="col-sm-2"><input class="form-control button" id="Showpassword" type="button" onclick="checkOn()" value="Ẩn,Hiện" ></div>
+            			  	<div class="col-md-10">
 								<div class="form-group">
 									<input type="datetime-local" value="{{$account['ngaysinh']}}" class="form-control" name="Time" placeholder="Date of birth">
-								</div>
-							
-								
-              </div>
-             			 <div class="col-md-10">
-						<button type="submit" class="btn btn-primary btn-block">Update</button>
-            	</div>
+								</div>	
+             				</div>
+             				 <div class="col-md-10">
+								<button type="submit" class="btn btn-primary btn-block">Update</button>
+            				</div>
 						</div>
-						</div>
-					
 					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -52,3 +50,17 @@
 	@endforeach
 </div>
 @endsection
+<script>
+	function checkOn(){
+		var password=$('#password');
+			var passwordType=password.attr('type');
+		if(passwordType=='password'){
+			password.attr('type','text');
+			$(this).val('Show');
+		}else
+		{
+			password.attr('type','password');
+			$(this).val('Show');
+		}
+	}
+</script>

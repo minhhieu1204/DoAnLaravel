@@ -19,7 +19,7 @@
 						
 							<div class="col-md-10">
 								<div class="form-group">
-									<input type="email" class="form-control" name="address" placeholder="Email Address">
+									<input type="email" class="form-control" name="email" placeholder="Email Address">
 								</div>
 							</div>
 							<div class="col-md-10">
