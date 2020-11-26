@@ -1,35 +1,40 @@
 @extends('layouts.Menu_Footer')
 @section('content')
 <div class="container">
-<div>
-  <h1>Đây là Trang Account</h1>
+<div >
+  <h1 style="text-align:center;">Manager Account</h1>
 </div>
-<table class="table"> 
+<table class="table">
+<a href="{{route('newspaper.addAccount')}}"><button class="btn btn-primary btn-sm">Create Account</button></a>
     <thead>
       <tr>
-        <th>Titel </th>
-        <th>Time Post</th>
-        <th>decription</th>
+        <th>Username </th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Date</th>
       </tr>
 
     </thead>
     <tbody>
-    @foreach($arrays as $baiviet)
+    
+    @foreach($arrays as $account)
         <tr>
-            <td>{{$baiviet['tieude']}}</td>
-            <td>{{$baiviet['time']}}</td>
-            <td>{{$baiviet['mota']}}</td>
-            <td><a href="{{route('newspaper.create')}}"><button type="button" class="btn btn-primary btn-sm">Create</button></a></td>
-            <td><a href="{{route('newspaper.edit',$baiviet['id'])}}"><button type="button" class="btn btn-primary btn-sm">Edit</button></a></td>
+            <td>{{$account['username']}}</td>
+            <td>{{$account['password']}}</td>
+            <td>{{$account['email']}}</td>
+            <td>{{$account['ngaysinh']}}</td>
+
+            <td><a href="{{route('newspaper.editAccount',$account['id'])}}"><button type="button" class="btn btn-primary btn-sm">Edit</button></a></td>
             <td>
-                <form action="{{route('newspaper.destroy',$baiviet['id'])}}" method="POST">
+                <form action="{{route('newspaper.destroyAccount',$account['id'])}}" method="POST">
                 @csrf
                 @method('DELETE')
                <button  type="submit" class="btn btn-primary btn-sm" >Delete</button>
                 </form> 
             </td>
         </tr> 
-    </tbody>
     @endforeach
+    </tbody>
+
  </table>
 @endsection
