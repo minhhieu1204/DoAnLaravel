@@ -23,7 +23,11 @@ Route::get('newspaper/{id}/edit',"BaivietController@edit")->name('newspaper.edit
  Route::get('newspaper/reply',"Replys@index")->name('newspaper.reply');
  Route::get('newspaper/replyApp',"Replys@replyApp")->name('newspaper.replyApp');
  Route::get('newspaper/account',"Account@index")->name('newspaper.accountIndex');
+ Route::get('newspaper/account/store',"Account@storeAccount")->name('newspaper.storeAccount');
  Route::get('newspaper/account/add',"Account@addAccount")->name('newspaper.addAccount');
+ Route::get('newspaper/account/{id}/edit',"Account@edit")->name('newspaper.editAccount');
+ Route::put('newspaper/{id}',"Account@update")->name('newspaper.updateAccount');
+ Route::delete('newspaper/{id}',"Account@destroy")->name('newspaper.destroyAccount');
  Route::get('newspaper/account/follow',"Account@followAccount")->name('newspaper.followAccount');
  Route::get('newspaper/category',"Catagorys@Index")->name('newspaper.categoryIndex');
  Route::get('newspaper/comment',"Comment@Index")->name('newspaper.commentIndex');

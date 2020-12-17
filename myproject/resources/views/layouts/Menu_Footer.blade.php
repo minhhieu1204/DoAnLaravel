@@ -391,10 +391,6 @@
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="{{route('newspaper.accountIndex')}}">All Account</a>
                                 </li>
-                                <li><a href="{{route('newspaper.addAccount')}}">Add Acount</a>
-                                </li>
-                                <li><a href="{{route('newspaper.followAccount')}}">Follow Manager</a>
-                                </li>
                                 
                             </ul>
                         </div>
