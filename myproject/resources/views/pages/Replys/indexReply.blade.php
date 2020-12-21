@@ -14,15 +14,12 @@
 
     </thead>
     <tbody>
-    @foreach($arrays as $baiviet)
+    @foreach($arrays as $baocao)
         <tr>
-            <td>{{$baiviet['tieude']}}</td>
-            <td>{{$baiviet['time']}}</td>
-            <td>{{$baiviet['mota']}}</td>
-            <td><a href="{{route('newspaper.create')}}"><button type="button" class="btn btn-primary btn-sm">Create</button></a></td>
-            <td><a href="{{route('newspaper.edit',$baiviet['id'])}}"><button type="button" class="btn btn-primary btn-sm">Edit</button></a></td>
+            <td>{{$baocao['noidung']}}</td>
+            <td>{{$baocao->user->username}}</td>
             <td>
-                <form action="{{route('newspaper.destroy',$baiviet['id'])}}" method="POST">
+                <form action="{{route('newspaper.destroyReplyBaiViet',$baocao['id'])}}" method="POST">
                 @csrf
                 @method('DELETE')
                <button  type="submit" class="btn btn-primary btn-sm" >Delete</button>
