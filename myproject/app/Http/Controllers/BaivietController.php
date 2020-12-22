@@ -142,4 +142,10 @@ class BaivietController extends Controller
         $array = ["arrays"=>BaiViet::where('daxoa','=',0)->get()];  
         return view('pages.Home.index',$array);
     }
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $dsBaiViet = ["dsBaiViet"=>BaiViet::where('tieude','LIKE','%'.search_text.'%')];
+        return view('pages.Home.index',$dsBaiViet);
+    }
 }
