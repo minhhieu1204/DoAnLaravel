@@ -1,18 +1,90 @@
 @extends('layouts.Menu_Footer')
 @section('content')
-<div class="container " >
-@foreach($arrays as $news)
-    <form action="{{route('newspaper.update',$news['id'])}}" method="POST">
-        @method('PUT')
+<div class="container">
+    <form action="{{route('newspaper.update',$baiviet['id'])}}" method="post">
         @csrf
-        <label for="name">Name newspaper </label>
-        <input type="text" name="name" value="{{$news['name']}}"> 
-        <label for="description">Description</label>
-        <input type="text" name="description" value="{{$news['description']}}">
-        <label for="content">Content</label>
-        <input type="text" name="content" value="{{$news['content']}}">
-        <input type="submit" value="update">
+        @method('PUT')
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" value="{{$baiviet['tieude']}}" class="form-control"> 
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" name="description" value="{{$baiviet['mota']}}" class="form-control">
+        </div >
+
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea name="content" cols="40" rows="5" id="noidung" value="{{$baiviet['noidung']}}" class="form-control">{{$baiviet['noidung']}}</textarea>
+        </div>
+		
+		<div class="form-group">
+			<label for="loai">Choose a car:</label><br>
+            <select class="form-control" style="width:20%" name="category" id="loai">
+			<?php $chuyenmuc = App\ChuyenMuc::all(); ?>
+			@foreach($chuyenmuc as $i)
+                <option value="{{$i['id']}}" <?php if($baiviet['chuyenmuc_id']==$i['id'] ) 
+                    echo 'selected'; ?> > {{$i['tenchuyenmuc']}} </option>
+			@endforeach
+		</select>
+        </div>
+        <input type="submit" value="Update">
     </form>
-@endforeach
+    <script src="{{asset ('js/ckeditor/ckeditor.js')}}"></script>
+    <script>
+    ClassicEditor.create( document.querySelector('#noidung'), {
+				
+				toolbar: {
+					items: [
+						'heading',
+						'|',
+						'bold',
+						'italic',
+						'link',
+						'bulletedList',
+						'numberedList',
+						'|',
+						'indent',
+						'outdent',
+						'|',
+						'imageUpload',
+						'blockQuote',
+						'insertTable',
+						'mediaEmbed',
+						'undo',
+						'redo'
+					]
+				},
+				language: 'en',
+				image: {
+					toolbar: [
+						'imageTextAlternative',
+						'imageStyle:full',
+						'imageStyle:side'
+					]
+				},
+				table: {
+					contentToolbar: [
+						'tableColumn',
+						'tableRow',
+						'mergeTableCells'
+					]
+				},
+				licenseKey: '',
+				
+			} )
+			.then( editor => {
+				window.editor = editor;
+
+				
+				
+			} )
+			.catch( error => {
+				console.error( 'Oops, something went wrong!' );
+				console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+				console.warn( 'Build id: irc9zhth9xs2-8o65j7c6blw0' );
+				console.error( error );
+			} );
+    </script>
 </div>
 @endsection

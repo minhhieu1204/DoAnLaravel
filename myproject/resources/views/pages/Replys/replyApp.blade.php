@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 <div>
-  <h1>Đây là Trang replyApp.</h1>
+  <h1>Trang phản hồi người dùng</h1>
 </div>
 <table class="table"> 
     <thead>
@@ -14,15 +14,12 @@
 
     </thead>
     <tbody>
-    @foreach($arrays as $baiviet)
+    @foreach($arrays as $phanhoi)
         <tr>
-            <td>{{$baiviet['tieude']}}</td>
-            <td>{{$baiviet['time']}}</td>
-            <td>{{$baiviet['mota']}}</td>
-            <td><a href="{{route('newspaper.create')}}"><button type="button" class="btn btn-primary btn-sm">Create</button></a></td>
-            <td><a href="{{route('newspaper.edit',$baiviet['id'])}}"><button type="button" class="btn btn-primary btn-sm">Edit</button></a></td>
+            <td>{{$phanhoi['noidung']}}</td>
+            <td>{{$phanhoi->user->username}}</td>
             <td>
-                <form action="{{route('newspaper.destroy',$baiviet['id'])}}" method="POST">
+                <form action="{{route('newspaper.destroyReplyApp',$phanhoi['id'])}}" method="POST">
                 @csrf
                 @method('DELETE')
                <button  type="submit" class="btn btn-primary btn-sm" >Delete</button>
