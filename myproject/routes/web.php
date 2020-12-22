@@ -30,7 +30,11 @@ Route::get('newspaper/{id}/edit',"BaivietController@edit")->name('newspaper.edit
  Route::delete('newspaper/{id}',"Account@destroy")->name('newspaper.destroyAccount');
  Route::get('newspaper/account/follow',"Account@followAccount")->name('newspaper.followAccount');
  Route::get('newspaper/category',"Catagorys@Index")->name('newspaper.categoryIndex');
+
  Route::get('newspaper/comment',"Comment@Index")->name('newspaper.commentIndex');
+ Route::get('newspaper/comment/edit/{id}',"Comment@edit")->name('newspaper.commentedit');
+ Route::put('newspaper/comment/updateput/{id}',"Comment@update")->name('cmt.handleupdates');
+ Route::delete('newspaper/comment/delete/{id}',"Comment@delete")->name('cmt.delete');
 
  Route::get('newspaper/category/createget',"Catagorys@create")->name('hihi.create');
  Route::post('newspaper/category/createpost',"Catagorys@store")->name('hihi.store');
