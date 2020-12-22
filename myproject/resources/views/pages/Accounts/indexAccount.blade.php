@@ -1,11 +1,17 @@
 @extends('layouts.Menu_Footer')
 @section('content')
+
 <div class="container">
 <div >
   <h1 style="text-align:center;">Manager Account</h1>
 </div>
-<table class="table">
 <a href="{{route('newspaper.addAccount')}}"><button class="btn btn-primary btn-sm">Create Account</button></a>
+<form action="" style="display:flex; justify-content:center;">
+<input type="text" >
+  <input type="submit" class="fa fa-search">
+</form>
+<table class="table">
+
     <thead>
       <tr>
         <th>Username </th>
@@ -37,6 +43,11 @@
     </tbody>
 
  </table>
+ <div class="container" style="display:flex; justify-content:center;" >         
+  <ul class="breadcrumb">
+    {{$arrays->links()}}      
+  </ul>
+</div>
 @endsection
 <script>
   function onCheck(){

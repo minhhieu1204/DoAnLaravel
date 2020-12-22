@@ -15,9 +15,8 @@
     @foreach($dscmt as $item)
         <tr>
             <td>{{$item['noidungbinhluan']}}</td>
-            <td><a href="{{route('newspaper.commentedit',$item['id'])}}"><button type="button" class="btn btn-primary btn-sm">Edit</button></a></td>
             <td>
-                <form action="{{route('cmt.delete',$item['id'])}}" method="POST">
+                <form action="{{route('comment.Destroy',$item['id'])}}" method="POST">
                 @csrf
                 @method('DELETE')
                <button  type="submit" class="btn btn-primary btn-sm" >Delete</button>

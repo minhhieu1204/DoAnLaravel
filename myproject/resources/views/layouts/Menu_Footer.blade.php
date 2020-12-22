@@ -7,6 +7,7 @@
     <title>Newspaper</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
     <!-- favicon
 		============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.ico')}}">
@@ -74,15 +75,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
-                            <li class="nav-item dropdown">
-                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
-                                <div role="menu" class="dropdown-menu search-dd animated flipInX">
-                                    <div class="search-input">
-                                        <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text" />
-                                    </div>
-                                </div>
-                            </li>
+                          
                             <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
@@ -362,11 +355,9 @@
                         </li>
                         <li><a data-toggle="tab" href="#Comment"><i class="fa fa-comment"></i>Comment</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Video"><i class="fa fa-video"></i>Video</a>
-                        </li>
 
                     </ul>
-                    <div class="tab-content custom-menu-content">
+                    <div class="tab-content custom-menu-content col-sm-7" >
                         <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="{{route('newspaper.index')}}">General Aticle</a>
@@ -409,12 +400,8 @@
                                 
                             </ul>
                         </div>
-                        <div id="Video" class="tab-pane notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href="">Manager Video</a></li>
-                            </ul>
-                        </div>
                     </div>
+               
                 </div>
             </div>
         </div>
