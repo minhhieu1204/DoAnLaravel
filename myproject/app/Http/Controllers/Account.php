@@ -13,7 +13,7 @@ class Account extends Controller
      */
     public function index()
     {
-        $array=['arrays'=>User::all()];
+        $array=['arrays'=>User::paginate(4)];
         return view('pages.Accounts.indexAccount',$array);
     }
 
@@ -41,8 +41,14 @@ class Account extends Controller
         $newAccount->email=$request->email;
         $newAccount->ngaysinh=$request->Time;
         $newAccount->save();
-        $array=['arrays'=>User::all()];
-        return view('pages.Accounts.indexAccount',$array);
+        $count=sizeof(User::all());
+        if($count%4!=0){
+            $count=floor($count/4);
+            $count+=1;
+        }else{
+            $count/=4;
+        }
+        return redirect('newspaper/account/?page='.$count);
     }
 
     /**
@@ -83,8 +89,15 @@ class Account extends Controller
         $account->email=$request->email;
         $account->ngaysinh=$request->Time;
         $account->save();
-        $array=['arrays'=>User::all()];
-        return view('pages.Accounts.indexAccount',$array);
+        $count=sizeof(User::all());
+        if($count%4!=0){
+            $count=floor($count/4);
+            $count+=1;
+        }else{
+            $count/=4;
+        }
+        return redirect('newspaper/account/?page='.$count);
+    
     }
 
     /**
@@ -96,7 +109,13 @@ class Account extends Controller
     public function destroy($id)
     {
         $new=User::destroy($id);
-        $array=['arrays'=>User::all()];
-        return view('pages.Accounts.indexAccount',$array);
+        $count=sizeof(User::all());
+        if($count%4!=0){
+            $count=floor($count/4);
+            $count+=1;
+        }else{
+            $count/=4;
+        }
+        return redirect('newspaper/account/?page='.$count);
     }
 }

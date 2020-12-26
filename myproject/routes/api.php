@@ -17,5 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 route::apiResource('baiviet','Api\NewsController')->only(['index']);
-route::apiResource('user','Api\UserController')->only(['index']);
-route::apiResource('chuyenmuc','Api\TypeController')->only(['index']);
+route::apiResource('users','Api\UserController')->only(['index']);
+route::apiResource('chuyenmucs','Api\TypeController')->only(['index' ]);

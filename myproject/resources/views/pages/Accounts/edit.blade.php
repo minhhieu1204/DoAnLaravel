@@ -34,7 +34,7 @@
 							  <div class="col-sm-2"><input class="form-control button" id="Showpassword" type="button" onclick="checkOn()" value="Ẩn,Hiện" ></div>
             			  	<div class="col-md-10">
 								<div class="form-group">
-									<input type="datetime-local" value="{{$account['ngaysinh']}}" class="form-control" name="Time" placeholder="Date of birth">
+									<input type="date" value="{{date('Y-m-d',strtotime($account['ngaysinh']))}}" class="form-control" name="Time">
 								</div>	
              				</div>
              				 <div class="col-md-10">

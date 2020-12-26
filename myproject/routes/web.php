@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('',"BaivietController@index")->name('newspaper.index');
+Route::middleware(['checklogin'])->group(function () {
+    Route::get('',"BaivietController@index")->name('newspaper.index');
 Route::get('newspaper/newsArticle',"BaivietController@NewsArticle")->name('newspaper.NewsArticle');
 Route::get('newspaper/newsHot',"BaivietController@NewsHot")->name('newspaper.NewsHot');
 Route::get('newspaper/detail/{id}',"BaivietController@show")->name('newspaper.detail');
@@ -36,7 +37,7 @@ Route::delete('newspaper/{id}',"Account@destroy")->name('newspaper.destroyAccoun
 Route::get('newspaper/account/follow',"Account@followAccount")->name('newspaper.followAccount');
 Route::get('newspaper/category',"Catagorys@Index")->name('newspaper.categoryIndex');
 Route::get('newspaper/comment',"Comment@Index")->name('newspaper.commentIndex');
-
+Route::delete('newspaper/comment/delete',"Comment@destroy")->name('comment.Destroy');
 Route::get('newspaper/category/createget',"Catagorys@create")->name('hihi.create');
 Route::post('newspaper/category/createpost',"Catagorys@store")->name('hihi.store');
 
@@ -44,43 +45,10 @@ Route::get('newspaper/category/updateget/{id}',"Catagorys@update")->name('hihi.u
 Route::put('newspaper/category/updateput/{id}',"Catagorys@edit")->name('hihi.handleupdates');
 
 Route::delete('newspaper/category/delete/{id}',"Catagorys@delete")->name('hihi.delete');
-
- Route::get('lk1-n',function (){
-    //  $users = App\User::all();
-
-    //  foreach($users as $user){
-    //      echo $user -> username . " follow ";
-    //      foreach ($user->dsFollow as $fl){
-    //         // echo $fl->user2_id;
-    //          $dcfl =$fl->user2_id;
-    //          $user2 = App\User::find($dcfl);
-    //          echo $user2-> username;
-    //          echo ',';
-    //      }
-    //      echo '<br>';
-    //  }
-
-    // $chuyenmucs = App\ChuyenMuc::all();
-
-    // foreach($chuyenmucs as $chuyenmuc)
-    // {
-    //     foreach($chuyenmuc->dsBaiViet as $baiviet)
-    //     {
-    //         echo 'bai viet: ' . $baiviet->tieude ;
-    //         echo '<br> ' . ' chuyen muc la: '.$baiviet->chuyenMuc->tenchuyenmuc . '<br>';
-    //     }
-    // }
-    $fls = App\Follow::all();
-
-    foreach($fls as $fl){
-        echo 'username: '.$fl->follow->username . ' follow username: '. $fl->duocFollow->username . '<br>';
-    }
- }
-
- );
+});
 
 
-
-
-
-
+//dang nhap
+Route::get('dang-nhap',"DangNhapController@index")->name('login.index');
+Route::post('dang-nhap',"DangNhapController@login")->name('login.login');
+Route::get('dang-xuat',"DangNhapController@logout")->name('login.logout');
