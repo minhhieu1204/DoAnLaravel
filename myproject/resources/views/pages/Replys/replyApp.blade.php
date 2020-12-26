@@ -1,6 +1,23 @@
 @extends('layouts.Menu_Footer')
 @section('content')
 <div class="container">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="header-top-menu" >
+                        <ul class="nav navbar-nav notika-top-nav">
+                            <li >
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="btn btn-primary btn-sm" ><i class="notika-icon notika-search"></i></a>
+                                <div role="menu" class="dropdown-menu search-dd animated flipInX">
+                                    <form action="{{route('newspaper.searchReplyApp')}}" method="GET">
+                                    <div class="search-input">
+                                        <i class="notika-icon notika-left-arrow"></i>
+                                        <input type="text"  name="query"/>
+                                    </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
 <div>
   <h1>Trang phản hồi người dùng</h1>
 </div>
