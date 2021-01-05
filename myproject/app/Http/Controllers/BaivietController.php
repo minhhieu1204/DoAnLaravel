@@ -14,7 +14,7 @@ class BaivietController extends Controller
      */
     public function index()
     {
-        $array = ["arrays"=>BaiViet::where('daxoa','=',0)->get()];
+        $array = ["arrays"=>BaiViet::where('daxoa','=',0)->paginate(2)];
         return view('pages.Home.index',$array);
     }
     public function NewsHot()
@@ -71,9 +71,17 @@ class BaivietController extends Controller
        $news->thoigian=date("Y/m/d");
        $news->chuyenmuc_id = $request->category;
        $news->save();
-      
+       
+       $count =sizeof(BaiViet::all());
+       if($count%2!=0)
+       {
+        $count = floor($count/2);
+        $count +=1;
+       }
+       else
+        $count/=2;  
 
-       return redirect()->route('newspaper.index');
+       return redirect('newspaper/?page='.$count);
     }
 
     /**
@@ -145,7 +153,11 @@ class BaivietController extends Controller
     public function search()
     {
         $search_text = $_GET['query'];
-        $dsBaiViet = ["dsBaiViet"=>BaiViet::where('tieude','LIKE','%'.search_text.'%')];
-        return view('pages.Home.index',$dsBaiViet);
+        $array = ["arrays"=>BaiViet::where('tieude','LIKE','%'.$search_text.'%')
+                                    ->orwhere('mota','LIKE','%'.$search_text.'%')
+                                    ->orwhere('noidung','LIKE','%'.$search_text.'%')
+                                    ->where('daxoa','=',0)
+                                    ->paginate(2)];
+        return view('pages.Home.index',$array);
     }
 }

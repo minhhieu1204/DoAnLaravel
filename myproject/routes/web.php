@@ -23,8 +23,10 @@ Route::delete('newspaper/newsArticle/{id}',"BaivietController@destroy")->name('n
 Route::get('newspaper/{id}/edit',"BaivietController@edit")->name('newspaper.edit');
 Route::put('newspaper/{id}',"BaivietController@update")->name('newspaper.update');
 Route::get('newspaper/reply',"ReplyBaiViet@index")->name('newspaper.reply');
+Route::get('newspaper/reply/search',"ReplyBaiViet@search")->name('newspaper.searchReplyBaiViet');
 Route::delete('newspaper/reply/{id}',"ReplyBaiViet@destroy")->name('newspaper.destroyReplyBaiViet');
 Route::get('newspaper/replyApp',"ReplyApp@index")->name('newspaper.replyApp');
+Route::get('newspaper/replyApp/search',"ReplyApp@search")->name('newspaper.searchReplyApp');
 Route::delete('newspaper/replyApp/{id}',"ReplyApp@destroy")->name('newspaper.destroyReplyApp');
 Route::get('newspaper/account',"Account@index")->name('newspaper.accountIndex');
 Route::get('newspaper/account/store',"Account@storeAccount")->name('newspaper.storeAccount');
