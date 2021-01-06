@@ -41,7 +41,7 @@
            <td> <a  href="{{route('newspaper.detail',$baiviet['id'])}}">{{$baiviet['tieude']}}</a></td>
             <td>{{$baiviet['thoigian']}}</td>
             <td>{{$baiviet['mota']}}</td>
-            <td>{{$baiviet['noidung']}}</td>
+            <td><textarea style="width:400px; height:100px;">{{$baiviet['noidung']}}</textarea></td>
             <td><img src="{{ asset ('img/upload/'.$baiviet['hinhanh'])  }}" alt=""></td>
             <td>{{$baiviet['luotlike']}}</td>
             <td>{{$baiviet['trangthai']}}</td>

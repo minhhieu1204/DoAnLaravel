@@ -12,7 +12,7 @@
 */
 
 Route::middleware(['checklogin'])->group(function () {
-    Route::get('',"BaivietController@index")->name('newspaper.index');
+Route::get('',"BaivietController@index")->name('newspaper.index');
 Route::get('newspaper/newsArticle',"BaivietController@NewsArticle")->name('newspaper.NewsArticle');
 Route::get('newspaper/newsHot',"BaivietController@NewsHot")->name('newspaper.NewsHot');
 Route::get('newspaper/detail/{id}',"BaivietController@show")->name('newspaper.detail');

@@ -176,7 +176,7 @@
     </div>
     <!-- Main Menu area End-->
     <!-- Start Status area -->
-    <div >
+    <div class="container" >
         @yield('content')
     </div>
     <!-- Start Footer area-->
