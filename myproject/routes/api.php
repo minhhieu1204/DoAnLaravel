@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+route::apiResource('tin-hot','Api\NewsHotController')->only(['index']);
 route::apiResource('baiviet','Api\NewsController')->only(['index']);
 route::apiResource('users','Api\UserController')->only(['index']);
-route::apiResource('chuyenmucs','Api\TypeController')->only(['index' ]);
+route::apiResource('chuyenmucs','Api\TypeController')->only(['index']);
