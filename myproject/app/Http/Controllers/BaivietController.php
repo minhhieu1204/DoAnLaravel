@@ -154,10 +154,7 @@ class BaivietController extends Controller
     {
         $search_text = $_GET['query'];
         $array = ["arrays"=>BaiViet::where('tieude','LIKE','%'.$search_text.'%')
-                                    ->orwhere('mota','LIKE','%'.$search_text.'%')
-                                    ->orwhere('noidung','LIKE','%'.$search_text.'%')
-                                    ->where('daxoa','=',0)
-                                    ->paginate(2)];
+                                    ->paginate(1)];
         return view('pages.Home.index',$array);
     }
 }

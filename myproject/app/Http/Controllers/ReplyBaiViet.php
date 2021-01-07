@@ -16,13 +16,13 @@ class ReplyBaiViet extends Controller
     {
         $new=BaoCaoBaiViet::destroy($id);
         $array=["arrays"=>BaoCaoBaiViet::all()];
-        return view('pages.Replys.replyApp',$array);
+        return view('pages.Replys.indexReply',$array);
     }
-    public function search()
+    public function search(Request $request)
     {
         $search_text = $_GET['query'];
         $array = ["arrays"=>BaoCaoBaiViet::where('noidung','LIKE','%'.$search_text.'%')
-                                    ->paginate(2)];
+                                    ->paginate(1)];
         return view('pages.Replys.indexReply',$array);
     }
 }
