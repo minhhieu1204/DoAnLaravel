@@ -1,7 +1,7 @@
 @extends('layouts.Menu_Footer')
 @section('content')
 <div class="container">
-    <form action="{{route('newspaper.update',$baiviet['id'])}}" method="post">
+    <form action="{{route('newspaper.update',$baiviet['id'])}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <div class="form-group">
@@ -17,6 +17,8 @@
             <label for="file">Image</label>
 			<input type="file" accept="*.jpg|*.png|*.jpeg" onchange="loadFile(event)" name="file" class="form-control">
         </div>
+
+		<input type="hidden"  name="file_old" value="{{$baiviet['hinhanh']}}">
 
 		<div  class="form-group">
                 <img src="{{ asset ('img/upload/'.$baiviet['hinhanh'])}}" style="width:25%" id="imgsp" class="img-thumbnail" alt="no img" />

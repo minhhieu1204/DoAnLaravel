@@ -68,8 +68,8 @@
 						'imageTextAlternative',
 						'imageStyle:full',
 						'imageStyle:side'
-					]
 				},
+					]
 				table: {
 					contentToolbar: [
 						'tableColumn',

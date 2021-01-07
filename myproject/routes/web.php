@@ -15,6 +15,11 @@ Route::middleware(['checklogin'])->group(function () {
     
     Route::PATCH('newspaper/{id}','BaivietController@update')->name('newspaper.update');
     Route::get('',"BaivietController@index")->name('newspaper.index');
+
+    Route::get('newspaper/add-news-host/{id}',"BaivietController@addnewshot")->name('newspaper.add');
+
+    Route::get('newspaper/delete-news-host/{id}',"BaivietController@deletenewshot")->name('newspaper.delete_hot');
+
     Route::get('newspaper/newsArticle',"BaivietController@NewsArticle")->name('newspaper.NewsArticle');
     Route::get('newspaper/newsHot',"BaivietController@NewsHot")->name('newspaper.NewsHot');
     Route::get('newspaper/detail/{id}',"BaivietController@show")->name('newspaper.detail');
