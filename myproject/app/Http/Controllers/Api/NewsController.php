@@ -15,7 +15,7 @@ class NewsController extends Controller
 
     public function index()
     {
-        $list =BaiViet::limit(2)->get();
+        $list =BaiViet::all();
         return response()->json(['data'  => $list]);
     }
 
