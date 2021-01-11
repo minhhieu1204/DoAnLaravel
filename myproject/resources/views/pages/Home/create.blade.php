@@ -14,8 +14,12 @@
 
 		<div class="form-group">
             <label for="file">Image</label>
-			<input type="file" accept="image/png, image/jpg" name="file" class="form-control">
+			<input type="file"  accept="*.jpg|*.png|*.jpeg" name="file" onchange="loadFile(event)" class="form-control">
         </div>
+
+		<div  class="form-group">
+                <img src="" style="width:25%" id="imgsp" class="img-thumbnail" alt="no img" />
+            </div>
 
         <div class="form-group">
             <label for="content">Content</label>
@@ -64,8 +68,8 @@
 						'imageTextAlternative',
 						'imageStyle:full',
 						'imageStyle:side'
-					]
 				},
+					]
 				table: {
 					contentToolbar: [
 						'tableColumn',
@@ -89,5 +93,14 @@
 				console.error( error );
 			} );
     </script>
+
+<script>
+
+	var loadFile = function(event) {
+		var image = document.getElementById('imgsp');
+		image.src = URL.createObjectURL(event.target.files[0]);
+	};
+
+</script>
 </div>
 @endsection

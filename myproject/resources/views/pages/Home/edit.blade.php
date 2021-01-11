@@ -1,9 +1,9 @@
 @extends('layouts.Menu_Footer')
 @section('content')
 <div class="container">
-    <form action="{{route('newspaper.update',$baiviet['id'])}}" method="post">
+    <form action="{{route('newspaper.update',$baiviet['id'])}}" method="post" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
+        @method('PATCH')
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" value="{{$baiviet['tieude']}}" class="form-control"> 
@@ -12,6 +12,17 @@
             <label for="description">Description</label>
             <input type="text" name="description" value="{{$baiviet['mota']}}" class="form-control">
         </div >
+
+		<div class="form-group">
+            <label for="file">Image</label>
+			<input type="file" accept="*.jpg|*.png|*.jpeg" onchange="loadFile(event)" name="file" class="form-control">
+        </div>
+
+		<input type="hidden"  name="file_old" value="{{$baiviet['hinhanh']}}">
+
+		<div  class="form-group">
+                <img src="{{ asset ('img/upload/'.$baiviet['hinhanh'])}}" style="width:25%" id="imgsp" class="img-thumbnail" alt="no img" />
+            </div>
 
         <div class="form-group">
             <label for="content">Content</label>
@@ -87,4 +98,12 @@
 			} );
     </script>
 </div>
+<script>
+
+	var loadFile = function(event) {
+		var image = document.getElementById('imgsp');
+		image.src = URL.createObjectURL(event.target.files[0]);
+	};
+
+</script>
 @endsection
