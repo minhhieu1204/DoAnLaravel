@@ -30,4 +30,5 @@ route::post('post-binh-luan','Api\BinhLuanController@postBinhLuan');
 
 
 route::post('phanhoinguoidung','Api\PhanHoiNDController@Index');
+route::post('danngky','Api\DangkyController@index');
 
