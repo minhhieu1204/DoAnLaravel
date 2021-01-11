@@ -26,4 +26,9 @@ route::post('baivietyeuthich','Api\BaivietYeuThichController@Index');
 route::get('baivietyeuthich/getall','Api\BaivietYeuThichController@getAll');
 route::post('dangki','Api\DangKiController@Index');
 
+route::get('get-binh-luan','Api\BinhLuanController@getBinhLuan');
+route::post('post-binh-luan','Api\BinhLuanController@postBinhLuan');
+
+
 route::post('phanhoinguoidung','Api\PhanHoiNDController@Index');
+

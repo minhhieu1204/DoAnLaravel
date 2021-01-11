@@ -139,8 +139,8 @@ class BaivietController extends Controller
      */
     public function update(Request $request, $id)
     {
-        File::delete('img/upload/'.$request->file_old);
-        $file_name="";
+       
+        $file_name=$request->file_old;
         $messages = [
             'image' => 'Định dạng không cho phép',
             'max' => 'Kích thước file quá lớn',
@@ -149,7 +149,8 @@ class BaivietController extends Controller
 		    'file' => 'image|max:2028',
 		], $messages);
         // Kiểm tra file hợp lệ
-        if ($request->file->isValid()){
+        if ($request->file!=null && $request->file->isValid()){
+            File::delete('img/upload/'.$request->file_old);
             // Lấy tên file
             $file_name = $request->file->getClientOriginalName();
             // Lưu file vào thư mục upload với tên là biến $filenamexx1     
