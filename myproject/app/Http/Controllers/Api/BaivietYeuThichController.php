@@ -14,7 +14,7 @@ class BaivietYeuThichController extends Controller
             $list1 =YeuThichBaiViet::all();
             $baiviet=new YeuThichBaiViet();
             foreach($list1 as $list){
-              if($list['baiviet_id']==$request->id_baiviet){
+              if(($list['baiviet_id']==$request->id_baiviet)&&($list['user_id']==$request->id_user)){
                 $dem++;
               }
             }
@@ -29,15 +29,18 @@ class BaivietYeuThichController extends Controller
             }
     }
 
-    public function getAll(){
+    public function getAll(Request $request){
       $list1 =YeuThichBaiViet::all();
       $list2 = BaiViet::all();
+      $idUser=$request->id_user;
 
       $b=[];
       $ds =[];
       foreach ($list1 as $i)
       {
+        if($idUser==$i['user_id']){
           array_push($b,$i['baiviet_id']);
+        }
       }
       
       foreach ($list2 as $baiviet)
@@ -45,8 +48,6 @@ class BaivietYeuThichController extends Controller
           if(in_array( $baiviet['id'],$b ))
               array_push($ds,$baiviet);
       }
-
-      
       return response()->json(['data'=> $ds]);
     }
 }

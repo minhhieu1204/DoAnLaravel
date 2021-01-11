@@ -23,6 +23,6 @@ route::apiResource('users','Api\UserController')->only(['index']);
 route::apiResource('chuyenmucs','Api\TypeController')->only(['index']);
 route::post('luotlike','Api\LikeController@Index');
 route::post('baivietyeuthich','Api\BaivietYeuThichController@Index');
-route::get('baivietyeuthich/getall','Api\BaivietYeuThichController@getAll');
+route::post('baivietyeuthich/getall','Api\BaivietYeuThichController@getAll');
 
 route::post('phanhoinguoidung','Api\PhanHoiNDController@Index');
