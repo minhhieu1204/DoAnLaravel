@@ -21,8 +21,10 @@ class ReplyApp extends Controller
     public function search()
     {
         $search_text = $_GET['query'];
-        $array = ["arrays"=>NguoiDungPhanHoi::where('noidung','LIKE','%'.$search_text.'%')
-                                    ->paginate(2)];
+        $a=NguoiDungPhanHoi::where('noidung','LIKE','%'.$search_text.'%')->paginate(2);
+        $a->appends( $search_text);
+        $array = ["arrays"=>$a];
+
         return view('pages.Replys.searchApp',$array);
     }
 }

@@ -48,7 +48,7 @@
  </table>
  <div class="container">      
   <ul class="pagination">
-  {!! $arrays->links()->withQueryString() !!}
+  {{ $arrays->appends('query',$_GET['query'])->links() }}
   </ul>
 </div>
 @endsection

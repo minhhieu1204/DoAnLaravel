@@ -9,7 +9,7 @@ class ReplyBaiViet extends Controller
 {
     public function index()
     {
-        $array = ["arrays"=>BaoCaoBaiViet::all()];
+        $array = ["arrays"=>BaoCaoBaiViet::paginate(2)];
         return view('pages.Replys.indexReply',$array);
     }
     public function destroy($id)
@@ -18,11 +18,12 @@ class ReplyBaiViet extends Controller
         $array=["arrays"=>BaoCaoBaiViet::all()];
         return view('pages.Replys.indexReply',$array);
     }
-    public function search(Request $request)
+    public function search()
     {
         $search_text = $_GET['query'];
-        $array = ["arrays"=>BaoCaoBaiViet::where('noidung','LIKE','%'.$search_text.'%')
-                                    ->paginate(1)];
-        return view('pages.Replys.indexReply',$array);
+        $a=BaoCaoBaiViet::where('noidung','LIKE','%'.$search_text.'%')->paginate(2);
+        $array = ["arrays"=>$a];
+
+        return view('pages.Replys.searchReply',$array);
     }
 }
