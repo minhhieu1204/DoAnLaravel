@@ -24,5 +24,6 @@ route::apiResource('chuyenmucs','Api\TypeController')->only(['index']);
 route::post('luotlike','Api\LikeController@Index');
 route::post('baivietyeuthich','Api\BaivietYeuThichController@Index');
 route::get('baivietyeuthich/getall','Api\BaivietYeuThichController@getAll');
+route::post('dangki','Api\DangKiController@Index');
 
 route::post('phanhoinguoidung','Api\PhanHoiNDController@Index');
