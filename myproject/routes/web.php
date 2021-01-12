@@ -59,3 +59,6 @@ Route::middleware(['checklogin'])->group(function () {
 Route::get('dang-nhap',"DangNhapController@index")->name('login.index');
 Route::post('dang-nhap',"DangNhapController@login")->name('login.login');
 Route::get('dang-xuat',"DangNhapController@logout")->name('login.logout');
+
+//search
+Route::get('newspaper/category/search',"Catagorys@search")->name('category.search');

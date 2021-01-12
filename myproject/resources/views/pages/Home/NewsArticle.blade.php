@@ -4,6 +4,7 @@
 <div>
   <h1>Đây là trang tin mới.</h1>
 </div>
+<td><a href="{{route('newspaper.create')}}"><button type="button" class="btn btn-primary btn-sm">Create</button></a></td>
 <table class="table"> 
     <thead>
       <tr>
@@ -19,7 +20,7 @@
             <td>{{$baiviet['tieude']}}</td>
             <td>{{$baiviet['time']}}</td>
             <td>{{$baiviet['mota']}}</td>
-            <td><a href="{{route('newspaper.create')}}"><button type="button" class="btn btn-primary btn-sm">Create</button></a></td>
+           
             <td><a href="{{route('newspaper.edit',$baiviet['id'])}}"><button type="button" class="btn btn-primary btn-sm">Edit</button></a></td>
             <td>
                 <form action="{{route('newspaper.destroy',$baiviet['id'])}}" method="POST">
@@ -32,4 +33,9 @@
     </tbody>
     @endforeach
  </table>
+ <div class="container">
+  <ul class="pagination">
+      {{ $arrays->links() }}
+  </ul>
+</div>
 @endsection

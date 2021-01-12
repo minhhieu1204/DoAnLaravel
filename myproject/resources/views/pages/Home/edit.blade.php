@@ -15,7 +15,7 @@
 
 		<div class="form-group">
             <label for="file">Image</label>
-			<input type="file" accept="*.jpg|*.png|*.jpeg" onchange="loadFile(event)" name="file" class="form-control">
+			<input type="file" accept="*.jpg|*.png|*.jpeg" onchange="loadFile(event)" value="null" name="file" class="form-control">
         </div>
 
 		<input type="hidden"  name="file_old" value="{{$baiviet['hinhanh']}}">

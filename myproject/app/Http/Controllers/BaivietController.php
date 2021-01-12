@@ -22,17 +22,23 @@ class BaivietController extends Controller
         {
             array_push($b,$i['baiviet_id']);
         }
-        $array = ["arrays"=>BaiViet::where('daxoa','=',0)->get(),"tinnong"=>$b];
+        // ->paginate(2)
+        $array = ["arrays"=>BaiViet::where('daxoa','=',0)->paginate(2),"tinnong"=>$b];
+        
         return view('pages.Home.index',$array);
     }
+
     public function NewsHot()
     {
-        $array = ["arrays"=>TinNong::all()];
+        // $array = ["arrays"=>TinNong::all()];
+        $array = ["arrays"=>TinNong::paginate(2)];
+
         return view('pages.Home.NewsHot',$array);
     }
     public function NewsArticle()
     {
-        $array = ["arrays"=>BaiViet::all()];
+         // $array = ["arrays"=>TinNong::all()];
+        $array = ["arrays"=>BaiViet::paginate(2)];
         
         return view('pages.Home.NewsArticle',$array);
     }
@@ -44,6 +50,7 @@ class BaivietController extends Controller
      */
     public function create()
     {
+
         return view('pages.Home.create');
     }
 
@@ -80,7 +87,15 @@ class BaivietController extends Controller
        $news->chuyenmuc_id = $request->category;
        $news->save();
        
-       return redirect()->route('newspaper.index');
+       $count = sizeof(BaiViet::where('daxoa','=',0)->get());
+
+       if($count%2!=0){
+           $count = floor($count/2);
+           $count+=1;
+       }else {
+           $count /= 2;
+       }
+       return redirect('/?page='.$count);
     }
 
     /**
@@ -108,7 +123,16 @@ class BaivietController extends Controller
     public function deletenewshot($id)
     {
         $tintuc =TinNong::destroy($id);
-        return redirect()->route('newspaper.NewsHot');
+        
+        $count = sizeof(TinNong::all());
+
+        if($count%2!=0){
+            $count = floor($count/2);
+            $count+=1;
+        }else {
+            $count /= 2;
+        }
+        return redirect('/newspaper/newsHot?page='.$count);
     }
 
 
@@ -139,8 +163,8 @@ class BaivietController extends Controller
      */
     public function update(Request $request, $id)
     {
-        File::delete('img/upload/'.$request->file_old);
-        $file_name="";
+        
+        $file_name=$request->file_old;
         $messages = [
             'image' => 'Định dạng không cho phép',
             'max' => 'Kích thước file quá lớn',
@@ -149,23 +173,33 @@ class BaivietController extends Controller
 		    'file' => 'image|max:2028',
 		], $messages);
         // Kiểm tra file hợp lệ
-        if ($request->file->isValid()){
+        if ($request->file!=null && $request->file->isValid()){
+            File::delete('img/upload/'.$request->file_old);
             // Lấy tên file
             $file_name = $request->file->getClientOriginalName();
             // Lưu file vào thư mục upload với tên là biến $filenamexx1     
             $request->file->move('img/upload',$file_name);
         }
-    
         $news=BaiViet::find($id);
         $news->tieude = $request->title;
         $news->mota=$request->description;
         $news->noidung=$request->content;
-        $news->hinhanh=$file_name;
+        if($file_name!=null)
+        {
+            $news->hinhanh=$file_name;
+        }
         $news->thoigian=date("Y/m/d");
         $news->chuyenmuc_id = $request->category;
         $news->save();
+        $count = sizeof(BaiViet::where('daxoa','=',0)->get());
 
-      return redirect()->route('newspaper.index');
+        if($count%2!=0){
+            $count = floor($count/2);
+            $count+=1;
+        }else {
+            $count /= 2;
+        }
+        return redirect('/?page='.$count);
   
     }
 
@@ -181,7 +215,16 @@ class BaivietController extends Controller
         $news=BaiViet::find($id);
         $news->daxoa=1;
         $news->save();
-        return redirect()->route('newspaper.index');
+        
+        $count = sizeof(BaiViet::where('daxoa','=',0)->get());
+
+        if($count%2!=0){
+            $count = floor($count/2);
+            $count+=1;
+        }else {
+            $count /= 2;
+        }
+        return redirect('/?page='.$count);
     }
 
     public function search()

@@ -65,4 +65,9 @@
     </tbody>
     @endforeach
  </table>
+ <div class="container">
+     <ul class="pagination">
+         {{ $arrays->links()  }}
+     </ul>
+ </div>
 @endsection
