@@ -29,4 +29,9 @@
     </tbody>
     @endforeach
  </table>
+ <div class="container" style="display:flex; justify-content:center;" >         
+  <ul class="breadcrumb">
+    {{$arrays->links()}}      
+  </ul>
+</div>
 @endsection

@@ -6,10 +6,7 @@
   <h1 style="text-align:center;">Manager Account</h1>
 </div>
 <a href="{{route('newspaper.addAccount')}}"><button class="btn btn-primary btn-sm">Create Account</button></a>
-<form action="" style="display:flex; justify-content:center;">
-<input type="text" >
-  <input type="submit" class="fa fa-search">
-</form>
+
 <table class="table">
 
     <thead>

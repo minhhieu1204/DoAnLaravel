@@ -23,7 +23,7 @@ class BaivietController extends Controller
             array_push($b,$i['baiviet_id']);
         }
         // ->paginate(2)
-        $array = ["arrays"=>BaiViet::where('daxoa','=',0)->paginate(2),"tinnong"=>$b];
+        $array = ["arrays"=>BaiViet::where('daxoa','=',0)->paginate(2),"tinnong"=>$b,"search"=>""];
         
         return view('pages.Home.index',$array);
     }
@@ -229,8 +229,14 @@ class BaivietController extends Controller
 
     public function search()
     {
+        $a = TinNong::all();
+        $b=[];
+        foreach ($a as $i)
+        {
+            array_push($b,$i['baiviet_id']);
+        }
         $search_text = $_GET['query'];
-        $dsBaiViet = ["dsBaiViet"=>BaiViet::where('tieude','LIKE','%'.search_text.'%')];
-        return view('pages.Home.index',$dsBaiViet);
+        $array = ["arrays"=>BaiViet::where('tieude','LIKE','%'.$search_text.'%')->paginate(2),"tinnong"=>$b,"search"=>$search_text];
+        return view('pages.Home.index',$array);
     }
 }

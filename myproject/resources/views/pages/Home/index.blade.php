@@ -67,7 +67,7 @@
  </table>
  <div class="container">
      <ul class="pagination">
-         {{ $arrays->links()  }}
+         {{ $arrays->appends(['query'=>$search])->links()  }}
      </ul>
  </div>
 @endsection

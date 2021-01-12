@@ -9,13 +9,13 @@ class ReplyApp extends Controller
 {
     public function index()
     {
-        $array = ["arrays"=>NguoiDungPhanHoi::all()];
+        $array = ["arrays"=>NguoiDungPhanHoi::paginate(4)];
         return view('pages.Replys.replyApp',$array);
     }
     public function destroy($id)
     {
-        $new=PhanHoiNguoiDung::destroy($id);
-        $array=["arrays"=>PhanHoiNguoiDung::all()];
+        $new=NguoiDungPhanHoi::destroy($id);
+        $array=["arrays"=>NguoiDungPhanHoi::paginate(4)];
         return view('pages.Replys.replyApp',$array);
     }
 }

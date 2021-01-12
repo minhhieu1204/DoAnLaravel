@@ -26,4 +26,9 @@
     </tbody>
     @endforeach
  </table>
+ <div class="container" style="display:flex; justify-content:center;" >         
+  <ul class="breadcrumb">
+    {{$dscmt->links()}}      
+  </ul>
+</div>
 @endsection
