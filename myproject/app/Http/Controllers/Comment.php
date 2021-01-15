@@ -9,7 +9,7 @@ class Comment extends Controller
 {
     public function index()
     {
-        $cmt = ['dscmt'=>BinhLuan::paginate(4)];
+        $cmt = ['dscmt'=>BinhLuan::paginate(2)];
         // dd(BinhLuan::all()->toArray());
          return view('pages.Comment.index',$cmt);
 

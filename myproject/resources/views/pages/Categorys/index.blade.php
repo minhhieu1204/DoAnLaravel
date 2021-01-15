@@ -40,4 +40,5 @@
     <ul class="pagination">
         {{ $dscategory->links() }}
     </ul>
+  </div>
 @endsection

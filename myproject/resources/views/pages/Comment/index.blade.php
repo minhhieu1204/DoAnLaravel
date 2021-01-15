@@ -8,6 +8,7 @@
     <thead>
       <tr>
         <th>Nội dung bình luận</th>
+        <th>Tên tài khoản</th>
       </tr>
 
     </thead>
@@ -15,6 +16,7 @@
     @foreach($dscmt as $item)
         <tr>
             <td>{{$item['noidungbinhluan']}}</td>
+            <td>{{$item->user->username}}</td>
             <td>
                 <form action="{{route('comment.Destroy',$item['id'])}}" method="POST">
                 @csrf
@@ -26,9 +28,14 @@
     </tbody>
     @endforeach
  </table>
- <div class="container" style="display:flex; justify-content:center;" >         
+ {{--  <div class="container" style="display:flex; justify-content:center;" >         
   <ul class="breadcrumb">
-    {{$dscmt->links()}}      
+    {{ $dscmt->links() }}      
+  </ul>
+</div>  --}}
+<div class="container">
+  <ul class="pagination">
+      {{ $dscmt->links() }}
   </ul>
 </div>
 @endsection
