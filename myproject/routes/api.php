@@ -23,12 +23,12 @@ route::apiResource('users','Api\UserController')->only(['index']);
 route::apiResource('chuyenmucs','Api\TypeController')->only(['index']);
 route::post('luotlike','Api\LikeController@Index');
 route::post('baivietyeuthich','Api\BaivietYeuThichController@Index');
-route::post('baivietyeuthich/getall','Api\BaivietYeuThichController@getAll');
+route::get('baivietyeuthich/getall','Api\BaivietYeuThichController@getAll');
+route::post('dangki','Api\DangKiController@Index');
 
 route::get('get-binh-luan','Api\BinhLuanController@getBinhLuan');
 route::post('post-binh-luan','Api\BinhLuanController@postBinhLuan');
 
 
 route::post('phanhoinguoidung','Api\PhanHoiNDController@Index');
-route::post('danngky','Api\DangkyController@index');
 
