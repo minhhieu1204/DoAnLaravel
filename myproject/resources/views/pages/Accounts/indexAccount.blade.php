@@ -5,8 +5,9 @@
 <div >
   <h1 style="text-align:center;">Manager Account</h1>
 </div>
-<a href="{{route('newspaper.addAccount')}}"><button class="btn btn-primary btn-sm">Create Account</button></a>
-
+<a href="{{route('newspaper.addAccount')}}"><button class="btn btn-primary btn-sm">Create Account</button></a> <br>
+<br>
+<input type="text" id="search" > <button id="search"><i class="fa fa-search">Search</i></button>
 <table class="table">
 
     <thead>

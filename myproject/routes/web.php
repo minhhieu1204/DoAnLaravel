@@ -33,7 +33,9 @@ Route::middleware(['checklogin'])->group(function () {
 
     Route::get('newspaper/reply',"ReplyBaiViet@index")->name('newspaper.reply');
     Route::delete('newspaper/reply/{id}',"ReplyBaiViet@destroy")->name('newspaper.destroyReplyBaiViet');
+    Route::get('newspaper/searchReply',"ReplyBaiViet@search")->name('newspaper.searchReplyBaiViet');
     Route::get('newspaper/replyApp',"ReplyApp@index")->name('newspaper.replyApp');
+    Route::get('newspaper/searchReplyApp',"ReplyApp@search")->name('newspaper.searchReplyApp');
     Route::delete('newspaper/replyApp/{id}',"ReplyApp@destroy")->name('newspaper.destroyReplyApp');
     Route::get('newspaper/account',"Account@index")->name('newspaper.accountIndex');
     Route::get('newspaper/account/store',"Account@storeAccount")->name('newspaper.storeAccount');
