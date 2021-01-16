@@ -44,7 +44,7 @@ Route::middleware(['checklogin'])->group(function () {
     Route::get('newspaper/account/follow',"Account@followAccount")->name('newspaper.followAccount');
     Route::get('newspaper/category',"Catagorys@Index")->name('newspaper.categoryIndex');
     Route::get('newspaper/comment',"Comment@Index")->name('newspaper.commentIndex');
-    Route::delete('newspaper/comment/delete',"Comment@destroy")->name('comment.Destroy');
+    Route::delete('newspaper/comment/delete/{id}',"Comment@delete")->name('comment.Destroy');
     Route::get('newspaper/category/createget',"Catagorys@create")->name('hihi.create');
     Route::post('newspaper/category/createpost',"Catagorys@store")->name('hihi.store');
 
@@ -59,3 +59,6 @@ Route::middleware(['checklogin'])->group(function () {
 Route::get('dang-nhap',"DangNhapController@index")->name('login.index');
 Route::post('dang-nhap',"DangNhapController@login")->name('login.login');
 Route::get('dang-xuat',"DangNhapController@logout")->name('login.logout');
+
+//search
+Route::get('newspaper/category/search',"Catagorys@search")->name('category.search');

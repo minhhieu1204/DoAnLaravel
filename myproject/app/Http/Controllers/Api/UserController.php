@@ -10,6 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        return User::all();
+        $list =User::all();
+        return response()->json(['data'  => $list]);
     }
 }

@@ -7,7 +7,7 @@
                             <li >
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="btn btn-primary btn-sm" ><i class="notika-icon notika-search"></i></a>
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
-                                    <form action="{{route('newspaper.searchReplyApp')}}" method="GET">
+                                    <form action="{{route('newspaper.searchReplyBaiViet')}}" method="GET">
                                     <div class="search-input">
                                         <i class="notika-icon notika-left-arrow"></i>
                                         <input type="text"  name="query"/>
@@ -19,24 +19,24 @@
                     </div>
                     </div>
 <div>
-  <h1>Trang phản hồi người dùng</h1>
+  <h1>Đây là Trang reply.</h1>
 </div>
 <table class="table"> 
     <thead>
       <tr>
         <th>Titel </th>
         <th>Time Post</th>
-        <th>decription</th>
+        <th>Decription</th>
       </tr>
 
     </thead>
     <tbody>
-    @foreach($arrays as $phanhoi)
+    @foreach($arrays as $baocao)
         <tr>
-            <td>{{$phanhoi['noidung']}}</td>
-            <td>{{$phanhoi->user->username}}</td>
+            <td>{{$baocao['noidung']}}</td>
+            <td>{{$baocao->user->username}}</td>
             <td>
-                <form action="{{route('newspaper.destroyReplyApp',$phanhoi['id'])}}" method="POST">
+                <form action="{{route('newspaper.destroyReplyBaiViet',$baocao['id'])}}" method="POST">
                 @csrf
                 @method('DELETE')
                <button  type="submit" class="btn btn-primary btn-sm" >Delete</button>
@@ -48,7 +48,7 @@
  </table>
  <div class="container">      
   <ul class="pagination">
-  {{ $arrays->links() }}
+  {{ $arrays->appends('query',$_GET['query'])->links() }}
   </ul>
 </div>
 @endsection

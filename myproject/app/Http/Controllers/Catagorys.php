@@ -9,7 +9,7 @@ class Catagorys extends Controller
     public function index()
     {
 
-        $categorys = ['dscategory'=> ChuyenMuc::all()];
+        $categorys = ['dscategory'=> ChuyenMuc::paginate(4)];
         return view('pages.Categorys.index',$categorys);
     }
     public function create()
@@ -21,8 +21,14 @@ class Catagorys extends Controller
         $chuyenmuc = new ChuyenMuc();
         $chuyenmuc->tenchuyenmuc = $request->title;
         $chuyenmuc->save();
-        $categorys = ['dscategory'=> ChuyenMuc::all()];
-        return view('pages.Categorys.index',$categorys);
+        $count = sizeof(ChuyenMuc::all());
+        if($count%4!=0){
+            $count = floor($count/4);
+            $count+=1;
+        }else {
+            $count /= 4;
+        }
+        return redirect('/newspaper/category?page='.$count);
     }
 
     public function update(Request $request,$id)
@@ -36,13 +42,34 @@ class Catagorys extends Controller
         $chuyenmuc = ChuyenMuc::find($request->id);
         $chuyenmuc->tenchuyenmuc = $request->title;
         $chuyenmuc->save();
-        $categorys = ['dscategory'=> ChuyenMuc::all()];
-        return view('pages.Categorys.index',$categorys);
+        $count = sizeof(ChuyenMuc::all());
+        if($count%4!=0){
+            $count = floor($count/4);
+            $count+=1;
+        }else {
+            $count /= 4;
+        }
+        return redirect('/newspaper/category?page='.$count);
     }
     public function delete(Request $request)
     {
         ChuyenMuc::destroy($request->id);
-        $categorys = ['dscategory'=> ChuyenMuc::all()];
-        return view('pages.Categorys.index',$categorys);
+
+        $count = sizeof(ChuyenMuc::all());
+
+        if($count%4!=0){
+            $count = floor($count/4);
+            $count+=1;
+        }else {
+            $count /= 4;
+        }
+        return redirect('/newspaper/category?page='.$count);
+    }
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $dsTheLoai = ["dscategory"=>ChuyenMuc::where('tenchuyenmuc','LIKE','%'.$search_text.'%')
+                       ->paginate(2) ];
+        return view('pages.Categorys.index',$dsTheLoai);
     }
 }
