@@ -18,7 +18,7 @@ class LikeController extends Controller
             $bailike->user_id=$id_use;
             $bailike->baiviet_id=$id_baiviet;
             $bailike->save();
-          echo "success";       
+          echo "";       
     }
 
     

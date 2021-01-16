@@ -30,7 +30,7 @@ class Comment extends Controller
     public function delete(Request $request)
     {
         BinhLuan::destroy($request->id);
-        $dscmt = ['dscmt'=> BinhLuan::paginate(4)];
-        return view('pages.Comment.index',$dscmt);
+        $dscmt = ['dscmt'=> BinhLuan::paginate(2)];
+        return redirect('newspaper/comment');
     }
 }

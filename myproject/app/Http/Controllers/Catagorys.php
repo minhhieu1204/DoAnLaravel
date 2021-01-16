@@ -9,7 +9,7 @@ class Catagorys extends Controller
     public function index()
     {
 
-        $categorys = ['dscategory'=> ChuyenMuc::paginate(4)];
+        $categorys = ['dscategory'=> ChuyenMuc::paginate(2)];
         return view('pages.Categorys.index',$categorys);
     }
     public function create()
@@ -22,11 +22,11 @@ class Catagorys extends Controller
         $chuyenmuc->tenchuyenmuc = $request->title;
         $chuyenmuc->save();
         $count = sizeof(ChuyenMuc::all());
-        if($count%4!=0){
-            $count = floor($count/4);
+        if($count%2!=0){
+            $count = floor($count/2);
             $count+=1;
         }else {
-            $count /= 4;
+            $count /= 2;
         }
         return redirect('/newspaper/category?page='.$count);
     }
@@ -43,11 +43,11 @@ class Catagorys extends Controller
         $chuyenmuc->tenchuyenmuc = $request->title;
         $chuyenmuc->save();
         $count = sizeof(ChuyenMuc::all());
-        if($count%4!=0){
-            $count = floor($count/4);
+        if($count%2!=0){
+            $count = floor($count/2);
             $count+=1;
         }else {
-            $count /= 4;
+            $count /= 2;
         }
         return redirect('/newspaper/category?page='.$count);
     }
@@ -57,11 +57,11 @@ class Catagorys extends Controller
 
         $count = sizeof(ChuyenMuc::all());
 
-        if($count%4!=0){
-            $count = floor($count/4);
+        if($count%2!=0){
+            $count = floor($count/2);
             $count+=1;
         }else {
-            $count /= 4;
+            $count /= 2;
         }
         return redirect('/newspaper/category?page='.$count);
     }
