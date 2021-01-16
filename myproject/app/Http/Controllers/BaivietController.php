@@ -163,7 +163,6 @@ class BaivietController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
         $file_name=$request->file_old;
         $messages = [
             'image' => 'Định dạng không cho phép',
@@ -191,15 +190,18 @@ class BaivietController extends Controller
         $news->thoigian=date("Y/m/d");
         $news->chuyenmuc_id = $request->category;
         $news->save();
-        $count = sizeof(BaiViet::where('daxoa','=',0)->get());
-
-        if($count%2!=0){
-            $count = floor($count/2);
-            $count+=1;
-        }else {
-            $count /= 2;
+        $count = BaiViet::where('daxoa','=',0)->get();
+        $diem=1;
+       
+        foreach($count as $i)
+        {
+            $diem++;
+            if($i['id']==$id)
+                break;
         }
-        return redirect('/?page='.$count);
+        $diem=floor($diem/2);
+
+        return redirect('/?page='.$diem);
   
     }
 

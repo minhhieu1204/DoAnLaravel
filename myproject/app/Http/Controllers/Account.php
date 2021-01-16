@@ -118,4 +118,24 @@ class Account extends Controller
         }
         return redirect('newspaper/account/?page='.$count);
     }
+
+    public function search(Request $request)
+    {
+        if ($request->ajax()) {
+            $output = '';
+            $products = User::where('username','LIKE','%'.$request->search.'%')->get();
+            if ($products) {
+                foreach ($products as $i) {
+                    $output .= '<tr>
+                    <td>' . $i['username']. '</td>
+                    <td>' . $i['password'] . '</td>
+                    <td>' . $i['email']. '</td>
+                    <td>' . $i['ngaysinh'] . '</td>
+                    </tr>';
+                }
+            }
+            
+            return Response($output);
+        }
+    }
 }
