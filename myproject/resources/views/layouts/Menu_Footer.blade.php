@@ -126,12 +126,15 @@
 
                     </ul>
                     <div class="tab-content custom-menu-content col-sm-7" >
-                        <div id="Home" class="tab-pane in  notika-tab-menu-bg animated flipInX">
+                        <div id="Home" class="tab-pane in notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="{{route('newspaper.index')}}">General Aticle</a>
                                 </li>
                                 <li><a href="{{route('newspaper.NewsHot')}}">Hot News</a>
                                 </li>
+                                <li><a href="{{route('newspaper.NewsArticle')}}">News Article</a>
+                                </li>
+                                
                             </ul>
                         </div>
                         <div id="Replys" class="tab-pane notika-tab-menu-bg animated flipInX">
